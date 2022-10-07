@@ -13,3 +13,4 @@ class Review(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    imgfile = models.ImageField(null=True, upload_to="", blank=True)

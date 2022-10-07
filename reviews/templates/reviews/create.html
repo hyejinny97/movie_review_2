@@ -1,8 +1,13 @@
 {% extends 'base.html' %} {% load django_bootstrap5 %} {% block content %}
 <main class="container mt-3">
   <h2 class="text-center">리뷰 작성</h2>
-  <form action="{% url 'reviews:create' %}" method="POST">
+  <form
+    action="{% url 'reviews:create' %}"
+    method="POST"
+    enctype="multipart/form-data"
+  >
     {% csrf_token %} {% bootstrap_form form %}
+
     <input class="btn btn-primary" type="submit" value="작성하기" />
   </form>
 </main>
