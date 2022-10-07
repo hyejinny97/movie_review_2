@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+  <main class='container'>
+
+    <p>
+      {{ review.movie_name }}
+      <i class="bi bi-star-fill star"></i>
+      평점:{{ review.grade }}/5
+      {{ review.updated_at }}
+    </p>
+    <h1>
+      {{ review.title }}
+    </h1>
+    <h3>
+      {{ review.content }}
+    </h3>
+
+    <a class="btn btn-primary" href="{% url 'reviews:update' review.pk %}">수정</a>
+
+    <form action="{% url 'reviews:delete' review.pk %}" method="POST">
+      {% csrf_token %}
+      <input class="btn btn-danger" type="submit" value="삭제">
+    </form>
+
+  </main>
+
+{% endblock content %}

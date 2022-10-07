@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .forms import ReviewForm
 from .models import Review
 
+
+
 # Create your views here.
 # 목록 페이지
 def index(request):
@@ -31,4 +33,33 @@ def create(request):
 
 # 글 상세 페이지
 def detail(request, pk):
-    return render(request, 'reviews/detail.html')
+    review = Review.objects.get(pk=pk)
+    context = {
+        'review': review,
+    }
+    return render(request, 'reviews/detail.html', context)
+
+# 글 삭제
+def delete(request, pk):
+    if request.method == 'POST':
+        Review.objects.get(pk=pk).delete()
+
+    return redirect('reviews:index')
+
+# 글 업데이트
+
+def update(request, pk):
+    review = Review.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            review = form.save()
+            return redirect('reviews:detail', review.pk)
+    elif request.method == 'GET':
+        form = ReviewForm(instance=review)
+    
+    context = {
+        'form':form
+    }
+
+    return render(request, 'reviews/update.html', context)
