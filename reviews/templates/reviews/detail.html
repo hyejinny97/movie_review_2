@@ -9,6 +9,7 @@
   </div>
   <h1 class="text-center">{{ review.title }}</h1>
   <hr />
+  {% if review.imgfile %}
   <div class="d-flex justify-content-center">
     <img
       src="{{ review.imgfile.url }}"
@@ -16,6 +17,7 @@
       style="width: 200px; height: 200px"
     />
   </div>
+  {% endif %}
   <p class="d-flex review-content justify-content-center align-items-center">
     {{ review.content }}
   </p>

@@ -6,7 +6,7 @@ from .models import Review
 # Create your views here.
 # 목록 페이지
 def index(request):
-    reviews = Review.objects.all().order_by("-pk")
+    reviews = Review.objects.all().order_by("-updated_at")
 
     context = {
         "reviews": reviews,
@@ -67,7 +67,10 @@ def update(request, pk):
     elif request.method == "GET":
         form = ReviewForm(instance=review)
 
-    context = {"form": form}
+    context = {
+        "form": form,
+        "review": review,
+    }
 
     return render(request, "reviews/update.html", context)
 

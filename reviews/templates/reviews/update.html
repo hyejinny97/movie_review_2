@@ -2,7 +2,7 @@
 <div class="container mt-3">
   <h2 class="text-center">리뷰 수정</h2>
   <form
-    action="{% url 'reviews:create' %}"
+    action="{% url 'reviews:update' review.pk %}"
     method="POST"
     enctype="multipart/form-data"
   >
