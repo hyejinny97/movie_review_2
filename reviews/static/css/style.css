@@ -13,13 +13,13 @@
 }
 
 .logo {
-  width: 50px;
+  width: 100px;
 }
 
 .card-effect:hover {
   box-shadow: 10px 5px 5px #f8f9FA;
   transition: 0.3s all ;
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .post {
