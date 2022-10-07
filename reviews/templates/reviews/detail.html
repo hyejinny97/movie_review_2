@@ -1,27 +1,32 @@
-{% extends 'base.html' %}
-{% block content %}
-  <main class='container'>
-
+{% extends 'base.html' %} {% block content %}
+<main class="container mt-3">
+  <div class="text-center">
     <p>
-      {{ review.movie_name }}
+      <span class="movie-name">{{ review.movie_name }}</span> |
       <i class="bi bi-star-fill star"></i>
       평점:{{ review.grade }}/5
-      {{ review.updated_at }}
     </p>
-    <h1>
-      {{ review.title }}
-    </h1>
-    <h3>
-      {{ review.content }}
-    </h3>
+  </div>
+  <h1 class="text-center">{{ review.title }}</h1>
+  <hr />
+  <p class="d-flex review-content justify-content-center align-items-center">
+    {{ review.content }}
+  </p>
+  <div class="d-flex justify-content-end text-muted">
+    {{ review.updated_at|date:"Y-m-d" }} | {{ review.updated_at|timesince }}전
+  </div>
 
-    <a class="btn btn-primary" href="{% url 'reviews:update' review.pk %}">수정</a>
-
+  <div class="d-flex justify-content-end mt-2">
+    <div class="me-2">
+      <a class="btn btn-primary" href="{% url 'reviews:update' review.pk %}"
+        >수정</a
+      >
+    </div>
     <form action="{% url 'reviews:delete' review.pk %}" method="POST">
       {% csrf_token %}
-      <input class="btn btn-danger" type="submit" value="삭제">
+      <input class="btn btn-danger" type="submit" value="삭제" />
     </form>
-
-  </main>
+  </div>
+</main>
 
 {% endblock content %}

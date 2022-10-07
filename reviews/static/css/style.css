@@ -1,7 +1,37 @@
+@font-face {
+  font-family: "JUA";
+  src: url("BMJUA_ttf-_1_.woff") format("woff");
+  font-weight: normal;
+}
+
+* {
+  font-family: "JUA";
+}
+
 .star {
-  color : yellow;
+  color : #ffd60a;
 }
 
 .logo {
   width: 50px;
+}
+
+.card-effect:hover {
+  box-shadow: 10px 5px 5px #f8f9FA;
+  transition: 0.3s all ;
+  transform: scale(1.05);
+}
+
+.post {
+  position: fixed;
+  bottom: 1rem;
+  right: 3rem;
+}
+
+.movie-name {
+  color: #48cae4;
+}
+
+.review-content {
+  min-height: 10rem;
 }
