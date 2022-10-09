@@ -140,8 +140,13 @@
   - 리뷰 수정 폼
 
 ## 프로젝트 결과 완성본
+> 영화 리뷰 페이지 (페어 프로그래밍 결과)
 
 ![](gif/django_project_03_animation.gif)
+
+> 추가) TMDB API를 이용해 영화 정보 페이지 추가
+
+![](gif/django_project_03_api_animation.gif)
 
 ## 프로젝트 후기
 

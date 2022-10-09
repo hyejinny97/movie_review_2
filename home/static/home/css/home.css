@@ -1,0 +1,11 @@
+/* home/search.html */
+.search-movie-a:hover {
+  transform: scale(1.03);
+  transition: 0.5s;
+}
+
+.search-movie-img {
+  width: 100%;
+  max-height: 250px;
+  object-fit:contain
+}

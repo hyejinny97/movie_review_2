@@ -1,0 +1,50 @@
+/* movie/detail.html */
+@media screen and (width < 576px) {
+  .movie-detail-backdrop-img {
+    width: 100%;
+    max-height: 50vw;
+  }
+}
+@media screen and (576px <= width <= 768px) {
+  .movie-detail-backdrop-img {
+    width: 100%;
+    max-height: 45vw;
+  }
+}
+@media screen and (768px <= width <= 992px) {
+  .movie-detail-backdrop-img {
+    width: 100%;
+    max-height: 35vw;
+  }
+}
+@media screen and (992px <= width) {
+  .movie-detail-backdrop-img {
+    width: 100%;
+    max-height: 30vw;
+  }
+}
+.movie-detail-backdrop {
+  background: linear-gradient(to bottom, gray, white);
+}
+.movie-detail {
+  height: 20vw;
+  width: 90%;
+}
+.movie-detail-poster {
+  position: relative;
+}
+.movie-detail-poster-img {
+  display: none;
+}
+@media screen and (992px <= width) {
+  .movie-detail-poster-img {
+    display: block;
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    z-index: 1;
+    height: 300px;
+    border: 3px solid white;
+    border-radius: 0.5rem;
+  }
+}

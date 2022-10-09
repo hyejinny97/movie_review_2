@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <main class='container'>
+    <section>
+      <div class='movie-detail-backdrop'>
+        <img src="https://image.tmdb.org/t/p/original/{{ movie.backdrop_path }}" alt="" class='movie-detail-backdrop-img'>
+      </div>
+      <aricle class='row movie-detail mx-auto'>
+        <div class='col-lg-4 movie-detail-poster'>
+          <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="" class='movie-detail-poster-img'>
+        </div>
+        <div class='col-12 col-lg-8 d-flex flex-column justify-content-center align-items-center'>
+          <h2>{{ movie.original_title }}</h2>
+          <p class='text-muted'>개봉일:
+            {{ movie.release_date }}
+            | 장르:
+            {% for genre in movie.genres %}
+              {{ genre.name }}
+            {% endfor %}
+          </p>
+          <p>{{ movie.tagline }}</p>
+        </div>
+      </aricle>
+    </section>
+  </main>
+{% endblock content %}
